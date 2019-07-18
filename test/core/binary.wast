@@ -636,7 +636,7 @@
     "\0a\04\01"                             ;; code section
     "\02\00\0b"                             ;; function body
   )
-  "invalid value type"
+  "invalid segment kind"
 )
 
 ;; 1 elem segment declared, 2 given
