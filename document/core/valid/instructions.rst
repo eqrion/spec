@@ -779,7 +779,7 @@ Control Instructions
 
 * There must be a :ref:`result type <syntax-resulttype>` :math:`[t^?]`, such that:
 
-  * The result type :math:`[t^?]` :ref:`matches <match-resulttype>` :math:`C.\CLABELS[l_i]`.
+  * The result type :math:`[t^?]` :ref:`matches <match-resulttype>` :math:`C.\CLABELS[l_N]`.
 
   * For all :math:`l_i` in :math:`l^\ast`,
     the result type :math:`[t^?]` :ref:`matches <match-resulttype>` :math:`C.\CLABELS[l_i]`.
