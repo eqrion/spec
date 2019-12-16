@@ -410,7 +410,7 @@ let run_assertion ass =
     )
 
   | AssertUninstantiable (def, re) ->
-    trace "Asserting trap...";
+    trace "Asserting uninstantiable...";
     let m = run_definition def in
     if not !Flags.unchecked then Valid.check_module m;
     (match
@@ -419,6 +419,8 @@ let run_assertion ass =
     with
     | exception Eval.Trap (_, msg) ->
       assert_message ass.at "instantiation" msg re
+    | exception (Import.Unknown (_, msg) | Eval.Link (_, msg)) ->
+      assert_message ass.at "linking" msg re
     | _ -> Assert.error ass.at "expected instantiation error"
     )
 

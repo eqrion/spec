@@ -343,6 +343,7 @@ rule token = parse
   | "assert_malformed" { ASSERT_MALFORMED }
   | "assert_invalid" { ASSERT_INVALID }
   | "assert_unlinkable" { ASSERT_UNLINKABLE }
+  | "assert_uninstantiable" { ASSERT_UNINSTANTIABLE }
   | "assert_return" { ASSERT_RETURN }
   | "assert_trap" { ASSERT_TRAP }
   | "assert_exhaustion" { ASSERT_EXHAUSTION }

@@ -164,7 +164,7 @@ let inline_type_explicit (c : context) x ft at =
 %token TABLE ELEM MEMORY DATA OFFSET IMPORT EXPORT TABLE
 %token MODULE BIN QUOTE
 %token SCRIPT REGISTER INVOKE GET
-%token ASSERT_MALFORMED ASSERT_INVALID ASSERT_SOFT_INVALID ASSERT_UNLINKABLE
+%token ASSERT_MALFORMED ASSERT_INVALID ASSERT_SOFT_INVALID ASSERT_UNLINKABLE ASSERT_UNINSTANTIABLE
 %token ASSERT_RETURN ASSERT_TRAP ASSERT_EXHAUSTION
 %token NAN
 %token INPUT OUTPUT
@@ -804,6 +804,8 @@ assertion :
     { AssertInvalid (snd $3, $4) @@ at () }
   | LPAR ASSERT_UNLINKABLE script_module STRING RPAR
     { AssertUnlinkable (snd $3, $4) @@ at () }
+  | LPAR ASSERT_UNINSTANTIABLE script_module STRING RPAR
+    { AssertUninstantiable (snd $3, $4) @@ at () }
   | LPAR ASSERT_TRAP script_module STRING RPAR
     { AssertUninstantiable (snd $3, $4) @@ at () }
   | LPAR ASSERT_RETURN action result_list RPAR { AssertReturn ($3, $4) @@ at () }

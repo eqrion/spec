@@ -139,7 +139,7 @@
 
 ;; Invalid bounds for elements
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 0 funcref)
     (func $f)
@@ -148,7 +148,7 @@
   "elements segment does not fit"
 )
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 0 0 funcref)
     (func $f)
@@ -157,7 +157,7 @@
   "elements segment does not fit"
 )
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 0 1 funcref)
     (func $f)
@@ -166,7 +166,7 @@
   "elements segment does not fit"
 )
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 0 funcref)
     (elem (i32.const 1))
@@ -174,7 +174,7 @@
   "elements segment does not fit"
 )
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 10 funcref)
     (func $f)
@@ -182,7 +182,7 @@
   )
   "elements segment does not fit"
 )
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (import "spectest" "table" (table 10 funcref))
     (func $f)
@@ -191,7 +191,7 @@
   "elements segment does not fit"
 )
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 10 20 funcref)
     (func $f)
@@ -199,7 +199,7 @@
   )
   "elements segment does not fit"
 )
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (import "spectest" "table" (table 10 funcref))
     (func $f)
@@ -208,7 +208,7 @@
   "elements segment does not fit"
 )
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 10 funcref)
     (func $f)
@@ -216,7 +216,7 @@
   )
   "elements segment does not fit"
 )
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (import "spectest" "table" (table 10 funcref))
     (func $f)
@@ -225,7 +225,7 @@
   "elements segment does not fit"
 )
 
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (table 10 funcref)
     (func $f)
@@ -233,7 +233,7 @@
   )
   "elements segment does not fit"
 )
-(assert_unlinkable
+(assert_uninstantiable
   (module
     (import "spectest" "table" (table 10 funcref))
     (func $f)
